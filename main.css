@@ -2,7 +2,6 @@
     :root{
       --bg: #fbfbfc;
       --card: #ffffff;
-      --muted: #6b7280;
       --accent: #111827;
       --accent-2: #6366f1; 
       --glass: rgba(17,24,39,0.04);
@@ -20,13 +19,13 @@
       -webkit-font-smoothing:antialiased;
       -moz-osx-font-smoothing:grayscale;
       line-height:1.45;
-      padding: 30px 0px;
+      padding: 80px 0px;
       display:flex;
       justify-content:center;
     }
 
     html {
-      scroll-padding-top: 80px; /* adjust to your header height */
+      scroll-padding-top: 75px; /* adjust to your header height */
     }
 
 
@@ -37,7 +36,7 @@
 
     header{
       position: fixed;
-      padding: 10px 20px 10px 20px; 
+      padding: 5px 20px 5px 20px; 
       top: 0;
       left: 0;
       display:flex;
@@ -49,24 +48,51 @@
       width: 100%;
     }
 
-    .brand{
-      display:flex;align-items:center;gap:12px;
+    .brand, .brand nav{
+      display:flex;
+      align-items:center;
+      gap:12px;
     }
     .logo{
-      width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,var(--accent-2),#9fa8ff);
+      width:48px;height:48px;border-radius:10px;
+      background-color:#6366f1;
       display:grid;
       place-items:center;
       color:white;
       font-weight:700;
-      font-size:18px
+      font-size:18px;
+      padding: 7px;
     }
+
+    .socials {
+      align-items: center;
+      flex-direction: row;
+      justify-content: space-around;
+      display:flex;
+      gap:10px;
+      height: 40px;
+    }
+    .socials img{
+      width: 30px;
+      margin: 0;
+    }
+
     nav{
       display:flex;
       gap:18px;
-      align-items:center
+      align-items:center;
     }
     nav a{color:var(--muted);text-decoration:none;font-weight:500}
     nav a:hover{color:var(--accent)}
+
+    header nav a {
+    color: white;
+  }
+
+  header nav a:hover {
+    color: var(--accent-2);
+  }
+
 
     /* Hero */
     .hero{
@@ -75,6 +101,11 @@
       gap:28px;align-items:center;
       margin-bottom:36px
     }
+
+        a {
+      text-decoration: none;
+    }
+
 
     .card{
       background:var(--card);
