@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Solomon</title>
+  <link rel="stylesheet" href="">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #fbfbfc;
+      --card: #ffffff;
+      --muted: #6b7280;
+      --accent: #111827;
+      --accent-2: #6366f1;
+      --glass: rgba(17,24,39,0.04);
+      --radius: 14px;
+      --max-width: 900px;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      background:var(--bg);
+      color:var(--accent);
+      -webkit-font-smoothing:antialiased;
+      padding:40px 20px;
+      display:flex;
+      justify-content:center;
+    }
+
+    .container{width:100%;max-width:var(--max-width)}
+
+    h1{font-size:28px;margin:0 0 14px 0;font-weight:700}
+    .muted{color:var(--muted)}
+
+    .cert-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+      gap:18px;
+      margin-top:22px;
+    }
+
+    .card{
+      background:var(--card);
+      padding:18px;
+      border-radius:var(--radius);
+      border:1px solid rgba(17,24,39,0.05);
+      box-shadow:0 4px 14px rgba(0,0,0,0.05);
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+    }
+
+    .title{font-weight:700;font-size:16px}
+    .issuer{font-size:14px;color:var(--muted)}
+    .date{font-size:13px;color:var(--muted)}
+
+    a.back{display:inline-block;margin-top:20px;text-decoration:none;font-weight:600;color:var(--accent-2)}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Certifications</h1>
+    <p class="muted">A full list of certifications, achievements, and completed courses.</p>
+
+    <div class="cert-grid">
+
+      <div class="card">
+        <div class="title">Python Essentials 1</div>
+        <div class="issuer">Cisco Networking Academy</div>
+        <div class="date">2024</div>
+      </div>
+
+      <div class="card">
+        <div class="title">Introduction to Cybersecurity</div>
+        <div class="issuer">Cisco Networking Academy</div>
+        <div class="date">2024</div>
+      </div>
+
+      <div class="card">
+        <div class="title">Basic Web Development</div>
+        <div class="issuer">DICT</div>
+        <div class="date">2023</div>
+      </div>
+
+      <div class="card">
+        <div class="title">IT Support Fundamentals</div>
+        <div class="issuer">Google / Coursera</div>
+        <div class="date">2024</div>
+      </div>
+
+      <div class="card">
+        <div class="title">Arduino & Embedded Systems</div>
+        <div class="issuer">Online Workshop</div>
+        <div class="date">2024</div>
+      </div>
+
+      <!-- Add more below -->
+
+    </div>
+
+    <a href="index.html" class="back">← Back to Portfolio</a>
+  </div>
+</body>
+</html>

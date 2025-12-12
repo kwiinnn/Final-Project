@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Charles Solomon</title>
+  <link rel="stylesheet" href="main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  
+</head>
+<body>
+  <div class="container">
+
+    <header>
+      <div class="brand">
+        <div class="logo">YN</div>
+        <div>
+          <div style="font-weight:700">Charles Solomon</div>
+          <div class="muted" style="font-size:12px">Frontend · UI · Minimalist</div>
+        </div>
+      </div>
+
+      <nav class="header">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#hobbies">Hobbies</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+    <div style="display:flex;gap:16px;margin-bottom:20px;font-size:26px">
+      <a href="#" aria-label="LinkedIn" style="text-decoration:none">💼</a>
+      <a href="#" aria-label="GitHub" style="text-decoration:none">💻</a>
+      <a href="#" aria-label="Facebook" style="text-decoration:none">📘</a>
+      <a href="mailto:you@example.com" aria-label="Email" style="text-decoration:none">✉️</a>
+    </div>
+
+    <section class="hero">
+      <div class="card intro">
+        <h1>Hi, I'm Charles Solomon.</h1>
+        <p class="muted">I craft clean interfaces and simple interactions. I enjoy turning complex ideas into accessible, beautiful experiences.</p>
+
+        <div style="margin-top:18px" class="grid-2">
+          <div>
+            <h2>Focus</h2>
+            <p class="muted">Front-end Development, Accessibility, Product Thinking</p>
+          </div>
+          <div>
+            <h2>Location</h2>
+            <p class="muted">Cagayan de Oro City, Philippines</p>
+          </div>
+        </div>
+
+        <div style="margin-top:18px" class="card" aria-hidden="true">
+          <h2>Featured Project</h2>
+          <p class="muted" style="margin:6px 0 0 0">Minimal portfolio template — lightweight and responsive. Use it as a starting point.</p>
+        </div>
+      </div>
+
+      <aside class="card profile">
+        <div class="avatar">YN</div>
+        <div style="font-weight:700">Charles Solomon</div>
+        <div class="muted">Student · Front-end Developer · Software Engineer</div>
+        <div class="cta" style="margin-top:8px">
+          <button class="btn btn-primary">Download CV</button>
+          <button class="btn btn-ghost">Say Hi</button>
+        </div>
+      </aside>
+    </section>
+
+    <main>
+      <section id="about" class="card" style="margin-bottom:18px">
+        <h2>About me</h2>
+        <p class="about muted">I'm a detail-oriented creator who loves clean layouts and reliable code. Currently studying Information Technology and building small projects that mix hardware and software. I enjoy learning, teaching, and refining workflows.</p>
+      </section>
+
+      <section id="techstack" class="card" style="margin-bottom:18px">
+        <h2>Tech Stack</h2>
+        <div class="hobbies" style="margin-top:6px;grid-template-columns:repeat(4,1fr)">
+          <div class="hobby"><div class="icon">🌐</div><div style="font-weight:600">HTML</div></div>
+          <div class="hobby"><div class="icon">🎨</div><div style="font-weight:600">CSS</div></div>
+          <div class="hobby"><div class="icon">⚡</div><div style="font-weight:600">JavaScript</div></div>
+          <div class="hobby"><div class="icon">🐍</div><div style="font-weight:600">Python</div></div>
+          <div class="hobby"><div class="icon">🤖</div><div style="font-weight:600">MediaPipe</div></div>
+          <div class="hobby"><div class="icon">🛠️</div><div style="font-weight:600">Arduino</div></div>
+          <div class="hobby"><div class="icon">📁</div><div style="font-weight:600">Git</div></div>
+          <div class="hobby"><div class="icon">💻</div><div style="font-weight:600">VS Code</div></div>
+        </div>
+      </section>
+
+      <section id="experience" class="card" style="margin-bottom:18px">
+        <h2>Experience</h2>
+        <div style="display:flex;flex-direction:column;gap:16px;margin-top:8px">
+          <div style="border-left:3px solid var(--accent-2);padding-left:12px">
+            <div style="font-weight:700">McGestro Gesture-Controlled Toy (2024)</div>
+            <div class="muted" style="font-size:13px">Project Developer</div>
+            <p class="muted" style="margin-top:6px">Developed a gesture-controlled glove for RC toys using an MPU sensor and Arduino Nano. Designed firmware, control mapping, and real‑time gesture interpretation.</p>
+          </div>
+          <div style="border-left:3px solid var(--accent-2);padding-left:12px">
+            <div style="font-weight:700">MediaPipe Robotic Surgery Interface (2024–2025)</div>
+            <div class="muted" style="font-size:13px">Research Developer</div>
+            <p class="muted" style="margin-top:6px">Built a hand‑tracking system using MediaPipe to control a robotic arm. Integrated Python, Arduino, and servo systems for real‑time operation.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="certifications" class="card" style="margin-bottom:18px">
+        <h2>Certifications</h2>
+        <ul class="muted" style="margin-top:6px;line-height:1.6">
+          <li>Python Foundations – Cisco Academy</li>
+          <li>Introduction to Git & GitHub – Google</li>
+          <li>Basic Web Development – FreeCodeCamp</li>
+        </ul>
+        <a href="certs.html" class="btn btn-ghost" style="margin-top:10px">View all</a>
+      </section>
+
+      <section id="education" class="card" style="margin-bottom:18px">
+        <h2>Education</h2>
+        <p class="muted" style="margin-top:6px"><strong>BS Computer Science</strong><br>2025 - 2029</p>
+      </section>
+
+      <section id="skills"" class="card" style="margin-bottom:18px">
+        <h2>Skills</h2>
+        <div class="skills" style="margin-top:6px">
+          <div class="skill">
+            <div class="label"><span>HTML & CSS</span><span class="muted">90%</span></div>
+            <div class="bar"><span style="width:90%"></span></div>
+          </div>
+          <div class="skill">
+            <div class="label"><span>JavaScript / Python</span><span class="muted">75%</span></div>
+            <div class="bar"><span style="width:75%"></span></div>
+          </div>
+          <div class="skill">
+            <div class="label"><span>MediaPipe / Computer Vision</span><span class="muted">60%</span></div>
+            <div class="bar"><span style="width:60%"></span></div>
+          </div>
+          <div class="skill">
+            <div class="label"><span>Arduino / Hardware</span><span class="muted">70%</span></div>
+            <div class="bar"><span style="width:70%"></span></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="hobbies" class="card" style="margin-bottom:18px">
+        <h2>Hobbies</h2>
+        <div class="hobbies" style="margin-top:6px">
+          <div class="hobby"><div class="icon">🎸</div><div style="font-weight:600">Guitar</div><div class="muted">Playing and learning chords</div></div>
+          <div class="hobby"><div class="icon">🧩</div><div style="font-weight:600">Puzzles</div><div class="muted">Rubik's cube & logic puzzles</div></div>
+          <div class="hobby"><div class="icon">🛠️</div><div style="font-weight:600">Making</div><div class="muted">Small electronics and prototypes</div></div>
+          <div class="hobby"><div class="icon">📚</div><div style="font-weight:600">Learning</div><div class="muted">Reading CS and biology topics</div></div>
+          <div class="hobby"><div class="icon">🎮</div><div style="font-weight:600">Games</div><div class="muted">Casual strategy games</div></div>
+          <div class="hobby"><div class="icon">✍️</div><div style="font-weight:600">Writing</div><div class="muted">Notes, tutorials, and guides</div></div>
+        </div>
+      </section>
+
+      <section id="contact" class="card" style="margin-bottom:18px">
+        <h2>Contact</h2>
+        <p class="muted" style="margin-top:6px">Want to work together, ask a question, or say hi? Send a message below — this form is static but shows the fields to capture.</p>
+
+        <form class="contact-form" onsubmit="event.preventDefault();alert('Thanks! This is a demo form. Replace with your backend.')">
+          <input type="text" name="name" placeholder="Your name" aria-label="Your name" required>
+          <input type="email" name="email" placeholder="you@example.com" aria-label="Your email" required>
+          <textarea name="message" placeholder="Tell me about your project" aria-label="Message" required></textarea>
+          <div style="display:flex;gap:10px;justify-content:flex-end">
+            <button class="btn btn-ghost" type="reset">Clear</button>
+            <button class="btn btn-primary" type="submit">Send message</button>
+          </div>
+        </form>
+
+      </section>
+
+      <div class="footer muted">Made with care • Minimalist portfolio template • © <span id="year"></span></div>
+    </main>
+
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
