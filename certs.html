@@ -3,64 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Solomon</title>
-  <link rel="stylesheet" href="">
+  <title>Certifications - Solomon</title>
+  <link rel="stylesheet" href="certs.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg: #fbfbfc;
-      --card: #ffffff;
-      --muted: #6b7280;
-      --accent: #111827;
-      --accent-2: #6366f1;
-      --glass: rgba(17,24,39,0.04);
-      --radius: 14px;
-      --max-width: 900px;
-    }
-
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
-      background:var(--bg);
-      color:var(--accent);
-      -webkit-font-smoothing:antialiased;
-      padding:40px 20px;
-      display:flex;
-      justify-content:center;
-    }
-
-    .container{width:100%;max-width:var(--max-width)}
-
-    h1{font-size:28px;margin:0 0 14px 0;font-weight:700}
-    .muted{color:var(--muted)}
-
-    .cert-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
-      gap:18px;
-      margin-top:22px;
-    }
-
-    .card{
-      background:var(--card);
-      padding:18px;
-      border-radius:var(--radius);
-      border:1px solid rgba(17,24,39,0.05);
-      box-shadow:0 4px 14px rgba(0,0,0,0.05);
-      display:flex;
-      flex-direction:column;
-      gap:6px;
-    }
-
-    .title{font-weight:700;font-size:16px}
-    .issuer{font-size:14px;color:var(--muted)}
-    .date{font-size:13px;color:var(--muted)}
-
-    a.back{display:inline-block;margin-top:20px;text-decoration:none;font-weight:600;color:var(--accent-2)}
-  </style>
 </head>
 <body>
   <div class="container">
@@ -69,73 +16,71 @@
 
     <div class="cert-grid">
 
-      <div class="card">
+      <a href="#" target="_blank" class="card" id="hackathon">
         <div class="title">AI Frontiers / AI MSME Hackathon 2025 (Top 5)</div>
         <div class="issuer">ICT Davao Inc.</div>
         <div class="date">2025</div>
-      </div>
+      </a>
 
-      <div class="card">
+      <a href="#" target="_blank" class="card" id="pycon">
         <div class="title">PyCon Davao 2025</div>
         <div class="issuer">DurianPy (Davao Python User Group)</div>
         <div class="date">2025</div>
-      </div>
+      </a>
 
-      <div class="card">
+      <a href="#" target="_blank" class="card" id="arcx">
         <div class="title">Foundation Level Threat intelligence Analyst</div>
         <div class="issuer">arcX</div>
         <div class="date">2025</div>
-      </div>
+      </a>
 
-      <div class="card">
+      <a href="#" target="_blank" class="card" id="git">
         <div class="title">Master the Basics: Git Essentials Workshop</div>
-        <div class="issuer">Society of Programmers and Refined Computer Scientists</div>
+        <div class="issuer">SPARCS</div>
         <div class="date">2025</div>
-      </div>
+      </a>
 
-      <div class="card">
+      <a href="#" target="_blank" class="card" id="io">
         <div class="title">Google I/O Extended CDO 2025</div>
         <div class="issuer">Google Developers Group CDO</div>
-        <div class="date">2024</div>
-      </div>
+        <div class="date">2025</div>
+      </a>
 
-      <div class="card">
+      <a href="https://credsverse.com/credentials/3fa58c45-ef29-4b76-a6d8-a1922ed4f945" target="_blank" class="card" id="buildai">
         <div class="title">Build with AI 2025</div>
         <div class="issuer">Google Developers Group CDO</div>
-        <div class="date">2024</div>
-      </div>
+        <div class="date">2025</div>
+      </a>
 
-      <div class="card">
+      <a href="https://credsverse.com/credentials/e17caecc-c641-4541-ae93-96f94eb7f90d" target="_blank" class="card" id="sikaptala">
         <div class="title">SikapTALA 2025: CS & IT Skills Competition</div>
         <div class="issuer">DLSU-D</div>
         <div class="date">2025</div>
-      </div>
+      </a>
 
-      <div class="card">
+      <a href="#" target="_blank" class="card" id="bio">
         <div class="title">Philippine Biology Olympiad - Participant</div>
         <div class="issuer">Ateneo Biological Organization - BOx</div>
         <div class="date">2025</div>
-      </div>
+      </a>
 
-      <div class="card">
+      <a href="https://drive.google.com/file/d/12ub6ZuflHDQUwTDxJxKe2V_CWFHErhNW/view" target="_blank" class="card" id="phys">
         <div class="title">Philippine Physics Olympiad - Participant</div>
         <div class="issuer">Samahang Pisika ng Pilipinas</div>
         <div class="date">2025</div>
-      </div>
+      </a>
 
-      <div class="card">
+      <a href="https://credsverse.com/credentials/d0201274-94f5-4587-874a-8bc11922ba7c" target="_blank" class="card" id="devfest">
         <div class="title">Google DevFest 2024</div>
         <div class="issuer">Google Developers Group CDO</div>
         <div class="date">2024</div>
-      </div>
+      </a>
 
-      <div class="card">
+      <a href="#" target="_blank" class="card" id="german">
         <div class="title">Goethe-Zertifikat A1: Fit in Deutsch 1</div>
         <div class="issuer">Goethe Institut</div>
         <div class="date">2023</div>
-      </div>
-
-      <!-- Add more below -->
+      </a>
 
     </div>
 
