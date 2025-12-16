@@ -1,52 +1,35 @@
-/* ==========================================
-   DARKMODE.CSS - CSS ONLY IMPLEMENTATION
-   ========================================== */
-
-/* We use the :has() pseudo-class to check if the #theme-switch checkbox 
-   at the start of the body is checked. This effectively replaces the JS
-   logic of checking for the data-theme attribute.
-*/
-
 body:has(#theme-switch:checked) {
-  /* Primary backgrounds */
-  --bg: #0f172a;           /* Deep navy - primary background */
-  --card: #1e293b;         /* Elevated slate - card background */
-  --accent: #f1f5f9;       /* Light slate - primary text */
-  --accent-2: #818cf8;     /* Brighter indigo - primary accent */
+  --bg: #0f172a;           
+  --card: #1e293b;        
+  --accent: #f1f5f9;       
+  --accent-2: #818cf8;
   
-  /* Secondary colors */
-  --glass: rgba(148, 163, 184, 0.08);  /* Subtle glass effect */
-  --muted: #94a3b8;        /* Muted slate - secondary text */
-  --border: rgba(148, 163, 184, 0.12); /* Subtle borders */
-  --hover: #334155;        /* Hover state */
+  --glass: rgba(148, 163, 184, 0.08);  
+  --muted: #94a3b8;       
+  --border: rgba(148, 163, 184, 0.12);
+  --hover: #334155;      
   
-  /* Gradient accents */
   --gradient-start: #4f46e5;
   --gradient-end: #7c3aed;
 }
 
-/* Update Toggle Icon Logic */
-/* 1. Hide the original Moon */
 body:has(#theme-switch:checked) .theme-icon {
-    font-size: 0; /* Hides text content */
+    font-size: 0; 
 }
 
-/* 2. Show the Sun using pseudo-element */
 body:has(#theme-switch:checked) .theme-icon::before {
     content: "☀️";
-    font-size: 18px; /* Restore size */
-    line-height: 1; /* Fix vertical alignment */
-    display: block; /* Ensure it behaves like a block to fill space */
+    font-size: 18px; 
+    line-height: 1;
+    display: block; 
 }
 
 
-/* Header with dark gradient */
 body:has(#theme-switch:checked) header {
   background: linear-gradient(90deg, #1e3a8a 0%, #3730a3 48.75%, #4c1d95 100%);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
-/* Cards with elevated appearance */
 body:has(#theme-switch:checked) .card {
   background: var(--card);
   border: 1px solid var(--border);
@@ -59,7 +42,6 @@ body:has(#theme-switch:checked) .card:hover {
   border-color: rgba(129, 140, 248, 0.2);
 }
 
-/* Text colors */
 body:has(#theme-switch:checked) .muted {
   color: var(--muted);
 }
@@ -70,13 +52,11 @@ body:has(#theme-switch:checked) strong {
   color: var(--accent);
 }
 
-/* Logo background */
 body:has(#theme-switch:checked) .logo {
   background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
   box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4);
 }
 
-/* Navigation links */
 body:has(#theme-switch:checked) nav a {
   color: rgba(241, 245, 249, 0.9);
 }
@@ -89,7 +69,6 @@ body:has(#theme-switch:checked) nav a::after {
   background: var(--accent-2);
 }
 
-/* FIXED: Social icons - Bluish tint for dark mode */
 body:has(#theme-switch:checked) .socials img {
   filter: invert(1) sepia(1) saturate(3) hue-rotate(190deg) brightness(0.9);
   opacity: 1;
@@ -99,7 +78,6 @@ body:has(#theme-switch:checked) .socials a:hover img {
   filter: invert(1) sepia(1) saturate(3) hue-rotate(190deg) brightness(1.1) drop-shadow(0 0 8px rgba(129, 140, 248, 0.6));
 }
 
-/* Buttons */
 body:has(#theme-switch:checked) .btn-primary {
   background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
   box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
@@ -120,7 +98,6 @@ body:has(#theme-switch:checked) .btn-ghost:hover {
   border-color: var(--accent-2);
 }
 
-/* Avatar */
 body:has(#theme-switch:checked) .avatar {
   background: var(--glass);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
@@ -130,7 +107,6 @@ body:has(#theme-switch:checked) .avatar:hover {
   box-shadow: 0 8px 24px rgba(129, 140, 248, 0.4);
 }
 
-/* Featured project */
 body:has(#theme-switch:checked) #featured-project {
   background: var(--card);
   border: 1px solid var(--border);
@@ -149,7 +125,6 @@ body:has(#theme-switch:checked) #featured-project:hover::before {
   opacity: 0.35;
 }
 
-/* Tech stack cards */
 body:has(#theme-switch:checked) .tech-card {
   background: var(--hover);
   border: 1px solid var(--border);
@@ -171,7 +146,6 @@ body:has(#theme-switch:checked) .tech-card:hover img {
   filter: brightness(1.3);
 }
 
-/* Skills bars */
 body:has(#theme-switch:checked) .bar {
   background: rgba(148, 163, 184, 0.1);
 }
@@ -181,7 +155,6 @@ body:has(#theme-switch:checked) .bar > span {
   box-shadow: 0 2px 8px rgba(79, 70, 229, 0.4);
 }
 
-/* Timeline */
 body:has(#theme-switch:checked) .timeline-item {
   border-color: var(--accent-2) !important;
 }
@@ -196,7 +169,6 @@ body:has(#theme-switch:checked) .timeline-item:hover::before {
   box-shadow: 0 0 0 6px rgba(129, 140, 248, 0.4);
 }
 
-/* Hobbies */
 body:has(#theme-switch:checked) .hobby {
   background: var(--card);
   border: 1px solid var(--border);
@@ -220,7 +192,6 @@ body:has(#theme-switch:checked) .hobby .muted {
   color: var(--muted);
 }
 
-/* Education section */
 body:has(#theme-switch:checked) .univlogo img {
   filter: brightness(1.2);
   background: var(--glass);
@@ -236,7 +207,6 @@ body:has(#theme-switch:checked) #with-highest {
   filter: brightness(1.2);
 }
 
-/* Form inputs */
 body:has(#theme-switch:checked) input,
 body:has(#theme-switch:checked) textarea {
   background: var(--hover);
@@ -256,7 +226,6 @@ body:has(#theme-switch:checked) textarea:focus {
   box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.15);
 }
 
-/* Theme toggle button in dark mode */
 body:has(#theme-switch:checked) .theme-toggle {
   background: rgba(241, 245, 249, 0.1);
   border: 1px solid rgba(241, 245, 249, 0.2);
@@ -266,10 +235,9 @@ body:has(#theme-switch:checked) .theme-toggle:hover {
   background: rgba(241, 245, 249, 0.2);
 }
 
-/* Language toggle button - FIXED (Removed Box) */
 body:has(#theme-switch:checked) .lang-toggle {
   background: transparent;
-  border: 1px solid transparent; /* Removes the box border */
+  border: 1px solid transparent;
   color: var(--muted);
 }
 
@@ -278,12 +246,10 @@ body:has(#theme-switch:checked) .lang-toggle:hover {
   color: var(--accent);
 }
 
-/* Footer */
 body:has(#theme-switch:checked) .footer {
   color: var(--muted);
 }
 
-/* Scrollbar styling for dark mode */
 body:has(#theme-switch:checked) ::-webkit-scrollbar {
   width: 12px;
 }
@@ -302,13 +268,11 @@ body:has(#theme-switch:checked) ::-webkit-scrollbar-thumb:hover {
   background: var(--accent-2);
 }
 
-/* Selection color */
 body:has(#theme-switch:checked) ::selection {
   background: rgba(129, 140, 248, 0.3);
   color: var(--accent);
 }
 
-/* Links */
 body:has(#theme-switch:checked) a {
   color: var(--accent-2);
 }
@@ -317,18 +281,15 @@ body:has(#theme-switch:checked) a:hover {
   color: #a5b4fc;
 }
 
-/* Glass effect for special elements */
 body:has(#theme-switch:checked) .intro {
   backdrop-filter: blur(10px);
   background: rgba(30, 41, 59, 0.8);
 }
 
-/* Enhance box shadows in dark mode */
 body:has(#theme-switch:checked) .tech-card::before {
   background: linear-gradient(90deg, transparent, rgba(129, 140, 248, 0.15), transparent);
 }
 
-/* Certification list */
 body:has(#theme-switch:checked) #certifications ul {
   color: var(--muted);
 }
@@ -337,7 +298,6 @@ body:has(#theme-switch:checked) #certifications li::marker {
   color: var(--accent-2);
 }
 
-/* Enhanced glow effects for dark mode */
 body:has(#theme-switch:checked) .card:hover {
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5),
               0 0 0 1px rgba(129, 140, 248, 0.2),
@@ -349,7 +309,6 @@ body:has(#theme-switch:checked) .logo:hover {
               0 0 40px rgba(129, 140, 248, 0.3);
 }
 
-/* Dark mode specific animations */
 @keyframes darkGlow {
   0%, 100% {
     box-shadow: 0 0 20px rgba(129, 140, 248, 0.2);

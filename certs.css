@@ -9,7 +9,6 @@
   --max-width: 900px;
 }
 
-/* ========== DARK MODE VARIABLES ========== */
 body:has(#theme-switch:checked) {
   --bg: #0f172a;
   --card: #1e293b;
@@ -51,27 +50,22 @@ h1 {
   color: var(--muted);
 }
 
-/* RESPONSIVE CERT GRID */
 .cert-grid {
   display: grid;
-  /* Auto-fill is great, but we set minmax to 260px. On phones <300px this breaks. */
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 18px;
   margin-top: 22px;
   
-  /* ADDED: Reset list styles for UL */
   list-style: none;
   padding: 0;
   margin-left: 0;
   margin-right: 0;
 }
 
-/* ADDED: Make the li transparent to the grid layout */
 .cert-grid li {
   display: contents;
 }
 
-/* --- THEME TOGGLE --- */
 .theme-toggle {
   background: transparent; 
   border: 1px solid rgba(17, 24, 39, 0.1); 
@@ -95,7 +89,6 @@ h1 {
 .theme-icon { transition: transform 0.3s ease; }
 .theme-toggle:active .theme-icon { transform: scale(0.8); }
 
-/* --- CARD LINK STYLES --- */
 
 .card {
   background: var(--card);
@@ -111,7 +104,6 @@ h1 {
   transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.3s ease;
   position: relative;
   overflow: hidden;
-  /* Added min-height for consistent look */
   min-height: 120px; 
 }
 
@@ -120,7 +112,6 @@ h1 {
   border-color: var(--accent-2);
 }
 
-/* ========== DARK MODE CARD STYLES ========== */
 body:has(#theme-switch:checked) .card {
   border: 1px solid rgba(148, 163, 184, 0.12);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
@@ -177,7 +168,6 @@ a.back:hover { color: var(--accent); }
 body:has(#theme-switch:checked) a.back { color: var(--accent-2); }
 body:has(#theme-switch:checked) a.back:hover { color: #a5b4fc; }
 
-/* --- BACKGROUND IMAGES --- */
 #hackathon::before { background-image: url("assets/aifrontiers.png"); }
 #pycon::before { background-image: url("assets/pycon.png"); }
 #arcx::before { background-image: url("assets/arcx.png"); }
@@ -190,7 +180,6 @@ body:has(#theme-switch:checked) a.back:hover { color: #a5b4fc; }
 #devfest::before { background-image: url("assets/devfest24.png"); }
 #german::before { background-image: url("assets/deutsch.png"); }
 
-/* Mobile Adjustment for extremely small screens */
 @media (max-width: 350px) {
   .cert-grid {
     grid-template-columns: 1fr;

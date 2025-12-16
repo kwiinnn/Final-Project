@@ -12,7 +12,6 @@
   box-sizing: border-box;
 }
 
-/* RESPONSIVE IMAGE RESET */
 img, svg, video {
   max-width: 100%;
   height: auto;
@@ -44,8 +43,6 @@ html {
   width: 100%;
   max-width: var(--max-width);
 }
-
-/* --- HEADER & NAV --- */
 
 header {
   position: fixed;
@@ -122,13 +119,11 @@ header nav a:hover {
   color: var(--accent-2);
 }
 
-/* --- HERO & CARDS --- */
-
 .hero {
   display: grid;
   grid-template-columns: 1fr 380px;
   gap: 28px;
-  align-items: center; /* Centered alignment for profile card */
+  align-items: center; 
   margin-bottom: 36px;
   margin-top: 20px;
 }
@@ -144,8 +139,6 @@ a {
   box-shadow: 0 6px 18px rgba(16, 24, 40, 0.06);
   border: 1px solid rgba(17, 24, 39, 0.04);
 }
-
-/* --- FEATURED PROJECT BG --- */
 
 #featured-project {
   position: relative; 
@@ -184,8 +177,6 @@ a {
   position: relative;
   z-index: 1;         
 }
-
-/* -------------------------- */
 
 .intro h1 {
   margin: 0 0 8px 0;
@@ -245,8 +236,6 @@ a {
   color: var(--accent-2);
 }
 
-/* --- SECTIONS --- */
-
 .grid-2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -262,8 +251,6 @@ h2 {
   color: var(--muted);
   font-size: 14px;
 }
-
-/* --- SKILLS --- */
 
 .skills {
   display: flex;
@@ -298,8 +285,6 @@ h2 {
   background: linear-gradient(90deg, var(--accent-2), #4f46e5);
 }
 
-/* --- TECH STACK GRID --- */
-
 .tech-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr); 
@@ -325,10 +310,9 @@ h2 {
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
-/* UPDATED TECH IMAGE SIZING */
 .tech-card img {
-  width: auto;       /* Allow width to adjust naturally */
-  height: 65%;       /* Percentage height prevents "too big" look on desktop */
+  width: auto;      
+  height: 65%;      
   object-fit: contain; 
   opacity: 0.5;
   transition: all 0.2s;
@@ -338,12 +322,10 @@ h2 {
   opacity: 1;
 }
 
-/* Specific adjustment for HTML/CSS shapes */
 #html img, #css img {
   height: 75%;
 }
 
-/* EDUCATION SECTION (Default/Desktop) */
 #education {
   display: flex;
   flex-direction: column;
@@ -368,7 +350,6 @@ h2 {
   -webkit-text-fill-color: transparent;
 }
 
-/* --- HOBBIES --- */
 
 .hobbies {
   display: grid;
@@ -433,7 +414,6 @@ h2 {
 #games::before { background-image: url("assets/gaming.png"); }
 #studying::before { background-image: url("assets/bball.png"); }
 
-/* --- FOOTER & FORM --- */
 
 .about {
   font-size: 15px;
@@ -466,7 +446,6 @@ textarea {
   font-size: 13px;
 }
 
-/* --- RESPONSIVE MEDIA QUERIES --- */
 
 @media (max-width: 900px) {
   .hero {
@@ -496,7 +475,6 @@ textarea {
     grid-template-columns: repeat(3, 1fr); 
   }
   
-  /* FIXED: Header un-fix for mobile */
   header {
     position: relative; 
     flex-direction: column;
@@ -522,8 +500,6 @@ textarea {
     padding-top: 20px; 
   }
 
-  /* EDUCATION FIX FOR MOBILE */
-  /* This stacks the logo and text vertically to prevent squashing */
   .undergrad, .highschool {
     flex-direction: column;
     text-align: center;
@@ -538,7 +514,6 @@ textarea {
     width: 70px; 
   }
 
-  /* Force remove the top margin on text to fix alignment in stack mode */
   .undergrad p, .highschool p {
     margin-top: 0 !important;
   }
