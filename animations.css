@@ -1,17 +1,20 @@
 /* ==========================================
-   ANIMATIONS.CSS - Professional Animations
+   ANIMATIONS.CSS - CSS ONLY VERSION (FIXED 2.0)
    ========================================== */
 
 /* Fade in up animation for sections */
 .fade-in-up {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  /* Animation plays immediately on load */
+  animation: fadeUp 0.8s ease-out forwards;
 }
 
-.fade-in-up.visible {
-  opacity: 1;
-  transform: translateY(0);
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Header entrance animation */
@@ -193,10 +196,17 @@ nav a:hover::after {
   box-shadow: 0 8px 24px rgba(99, 102, 241, 0.15);
 }
 
-/* Skill bar fill animation */
+/* FIXED SKILL BAR ANIMATION */
+.skill-bar-fill {
+  transform-origin: left; 
+  transform: scaleX(0);   
+  animation: fillBar 1.5s ease-out forwards;
+  animation-delay: 0.5s;
+}
+
 @keyframes fillBar {
-  from {
-    width: 0;
+  to {
+    transform: scaleX(1); 
   }
 }
 
@@ -254,6 +264,22 @@ nav a:hover::after {
 /* Timeline animations */
 .timeline-item {
   position: relative;
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: slideInRight 0.6s ease-out forwards;
+}
+
+.timeline-item:nth-child(1) { animation-delay: 0.4s; }
+.timeline-item:nth-child(2) { animation-delay: 0.5s; }
+.timeline-item:nth-child(3) { animation-delay: 0.6s; }
+.timeline-item:nth-child(4) { animation-delay: 0.7s; }
+.timeline-item:nth-child(5) { animation-delay: 0.8s; }
+
+@keyframes slideInRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .timeline-item::before {
@@ -316,13 +342,18 @@ input:focus, textarea:focus {
   background: rgba(255, 255, 255, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 12px;
-  padding: 8px 12px;
   cursor: pointer;
   font-size: 18px;
   transition: all 0.3s ease;
+  
+  /* FIXED: Set specific dimensions to prevent resizing */
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 42px;
+  height: 42px;
+  padding: 0; /* Remove padding, rely on width/height */
+  
   backdrop-filter: blur(10px);
 }
 
@@ -357,6 +388,7 @@ header {
 
 /* Floating animation for profile card */
 .profile {
+  opacity: 1;
   animation: float 6s ease-in-out infinite;
 }
 

@@ -1,15 +1,13 @@
 /* ==========================================
-   DARKMODE.CSS - Dark Theme with Color Theory
+   DARKMODE.CSS - CSS ONLY IMPLEMENTATION
    ========================================== */
 
-/* Dark mode color palette with proper color theory:
-   - Deep navy blues for backgrounds (reduces eye strain)
-   - Elevated grays for cards (proper contrast hierarchy)
-   - Vibrant accent colors (increased saturation for dark backgrounds)
-   - Muted text colors (WCAG compliant contrast ratios)
+/* We use the :has() pseudo-class to check if the #theme-switch checkbox 
+   at the start of the body is checked. This effectively replaces the JS
+   logic of checking for the data-theme attribute.
 */
 
-[data-theme="dark"] {
+body:has(#theme-switch:checked) {
   /* Primary backgrounds */
   --bg: #0f172a;           /* Deep navy - primary background */
   --card: #1e293b;         /* Elevated slate - card background */
@@ -27,197 +25,210 @@
   --gradient-end: #7c3aed;
 }
 
-/* Body background with subtle texture */
+/* Update Toggle Icon Logic */
+/* 1. Hide the original Moon */
+body:has(#theme-switch:checked) .theme-icon {
+    font-size: 0; /* Hides text content */
+}
+
+/* 2. Show the Sun using pseudo-element */
+body:has(#theme-switch:checked) .theme-icon::before {
+    content: "☀️";
+    font-size: 18px; /* Restore size */
+    line-height: 1; /* Fix vertical alignment */
+    display: block; /* Ensure it behaves like a block to fill space */
+}
+
 
 /* Header with dark gradient */
-[data-theme="dark"] header {
+body:has(#theme-switch:checked) header {
   background: linear-gradient(90deg, #1e3a8a 0%, #3730a3 48.75%, #4c1d95 100%);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
 /* Cards with elevated appearance */
-[data-theme="dark"] .card {
+body:has(#theme-switch:checked) .card {
   background: var(--card);
   border: 1px solid var(--border);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
-[data-theme="dark"] .card:hover {
+body:has(#theme-switch:checked) .card:hover {
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4),
               0 0 0 1px rgba(129, 140, 248, 0.1);
   border-color: rgba(129, 140, 248, 0.2);
 }
 
 /* Text colors */
-[data-theme="dark"] .muted {
+body:has(#theme-switch:checked) .muted {
   color: var(--muted);
 }
 
-[data-theme="dark"] h1,
-[data-theme="dark"] h2,
-[data-theme="dark"] strong {
+body:has(#theme-switch:checked) h1,
+body:has(#theme-switch:checked) h2,
+body:has(#theme-switch:checked) strong {
   color: var(--accent);
 }
 
 /* Logo background */
-[data-theme="dark"] .logo {
+body:has(#theme-switch:checked) .logo {
   background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
   box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4);
 }
 
 /* Navigation links */
-[data-theme="dark"] nav a {
+body:has(#theme-switch:checked) nav a {
   color: rgba(241, 245, 249, 0.9);
 }
 
-[data-theme="dark"] nav a:hover {
+body:has(#theme-switch:checked) nav a:hover {
   color: var(--accent-2);
 }
 
-[data-theme="dark"] nav a::after {
+body:has(#theme-switch:checked) nav a::after {
   background: var(--accent-2);
 }
 
 /* FIXED: Social icons - Bluish tint for dark mode */
-[data-theme="dark"] .socials img {
+body:has(#theme-switch:checked) .socials img {
   filter: invert(1) sepia(1) saturate(3) hue-rotate(190deg) brightness(0.9);
   opacity: 1;
 }
 
-[data-theme="dark"] .socials a:hover img {
+body:has(#theme-switch:checked) .socials a:hover img {
   filter: invert(1) sepia(1) saturate(3) hue-rotate(190deg) brightness(1.1) drop-shadow(0 0 8px rgba(129, 140, 248, 0.6));
 }
 
 /* Buttons */
-[data-theme="dark"] .btn-primary {
+body:has(#theme-switch:checked) .btn-primary {
   background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
   box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
 }
 
-[data-theme="dark"] .btn-primary:hover {
+body:has(#theme-switch:checked) .btn-primary:hover {
   box-shadow: 0 8px 24px rgba(79, 70, 229, 0.5);
 }
 
-[data-theme="dark"] .btn-ghost {
+body:has(#theme-switch:checked) .btn-ghost {
   background: transparent;
   border: 1px solid rgba(129, 140, 248, 0.3);
   color: var(--accent-2);
 }
 
-[data-theme="dark"] .btn-ghost:hover {
+body:has(#theme-switch:checked) .btn-ghost:hover {
   background: rgba(129, 140, 248, 0.1);
   border-color: var(--accent-2);
 }
 
 /* Avatar */
-[data-theme="dark"] .avatar {
+body:has(#theme-switch:checked) .avatar {
   background: var(--glass);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-[data-theme="dark"] .avatar:hover {
+body:has(#theme-switch:checked) .avatar:hover {
   box-shadow: 0 8px 24px rgba(129, 140, 248, 0.4);
 }
 
 /* Featured project */
-[data-theme="dark"] #featured-project {
+body:has(#theme-switch:checked) #featured-project {
   background: var(--card);
   border: 1px solid var(--border);
 }
 
-[data-theme="dark"] #featured-project::before {
+body:has(#theme-switch:checked) #featured-project::before {
   opacity: 0.2;
 }
 
-[data-theme="dark"] #featured-project:hover {
+body:has(#theme-switch:checked) #featured-project:hover {
   background: var(--hover);
   border-color: rgba(129, 140, 248, 0.3);
 }
 
-[data-theme="dark"] #featured-project:hover::before {
+body:has(#theme-switch:checked) #featured-project:hover::before {
   opacity: 0.35;
 }
 
 /* Tech stack cards */
-[data-theme="dark"] .tech-card {
+body:has(#theme-switch:checked) .tech-card {
   background: var(--hover);
   border: 1px solid var(--border);
 }
 
-[data-theme="dark"] .tech-card:hover {
+body:has(#theme-switch:checked) .tech-card:hover {
   background: var(--card);
   border-color: var(--accent-2);
   box-shadow: 0 8px 24px rgba(129, 140, 248, 0.2);
 }
 
-[data-theme="dark"] .tech-card img {
+body:has(#theme-switch:checked) .tech-card img {
   opacity: 0.7;
   filter: brightness(1.2);
 }
 
-[data-theme="dark"] .tech-card:hover img {
+body:has(#theme-switch:checked) .tech-card:hover img {
   opacity: 1;
   filter: brightness(1.3);
 }
 
 /* Skills bars */
-[data-theme="dark"] .bar {
+body:has(#theme-switch:checked) .bar {
   background: rgba(148, 163, 184, 0.1);
 }
 
-[data-theme="dark"] .bar > span {
+body:has(#theme-switch:checked) .bar > span {
   background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
   box-shadow: 0 2px 8px rgba(79, 70, 229, 0.4);
 }
 
 /* Timeline */
-[data-theme="dark"] .timeline-item {
+body:has(#theme-switch:checked) .timeline-item {
   border-color: var(--accent-2) !important;
 }
 
-[data-theme="dark"] .timeline-item::before {
+body:has(#theme-switch:checked) .timeline-item::before {
   background: var(--accent-2);
   border-color: var(--card);
   box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.3);
 }
 
-[data-theme="dark"] .timeline-item:hover::before {
+body:has(#theme-switch:checked) .timeline-item:hover::before {
   box-shadow: 0 0 0 6px rgba(129, 140, 248, 0.4);
 }
 
 /* Hobbies */
-[data-theme="dark"] .hobby {
+body:has(#theme-switch:checked) .hobby {
   background: var(--card);
   border: 1px solid var(--border);
 }
 
-[data-theme="dark"] .hobby::before {
+body:has(#theme-switch:checked) .hobby::before {
   opacity: 0.25;
   filter: brightness(0.8);
 }
 
-[data-theme="dark"] .hobby:hover {
+body:has(#theme-switch:checked) .hobby:hover {
   background: var(--hover);
   border-color: rgba(129, 140, 248, 0.3);
 }
 
-[data-theme="dark"] .hobby:hover::before {
+body:has(#theme-switch:checked) .hobby:hover::before {
   opacity: 0.4;
 }
 
-[data-theme="dark"] .hobby .muted {
+body:has(#theme-switch:checked) .hobby .muted {
   color: var(--muted);
 }
 
 /* Education section */
-[data-theme="dark"] .univlogo img {
+body:has(#theme-switch:checked) .univlogo img {
   filter: brightness(1.2);
   background: var(--glass);
   border-radius: 8px;
   padding: 8px;
 }
 
-[data-theme="dark"] #with-highest {
+body:has(#theme-switch:checked) #with-highest {
   background: linear-gradient(90deg, #fbbf24 0%, #f59e0b 100%);
   background-clip: text;
   -webkit-background-clip: text;
@@ -226,160 +237,114 @@
 }
 
 /* Form inputs */
-[data-theme="dark"] input,
-[data-theme="dark"] textarea {
+body:has(#theme-switch:checked) input,
+body:has(#theme-switch:checked) textarea {
   background: var(--hover);
   border: 1px solid var(--border);
   color: var(--accent);
 }
 
-[data-theme="dark"] input::placeholder,
-[data-theme="dark"] textarea::placeholder {
+body:has(#theme-switch:checked) input::placeholder,
+body:has(#theme-switch:checked) textarea::placeholder {
   color: var(--muted);
 }
 
-[data-theme="dark"] input:focus,
-[data-theme="dark"] textarea:focus {
+body:has(#theme-switch:checked) input:focus,
+body:has(#theme-switch:checked) textarea:focus {
   background: var(--card);
   border-color: var(--accent-2);
   box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.15);
 }
 
 /* Theme toggle button in dark mode */
-[data-theme="dark"] .theme-toggle {
+body:has(#theme-switch:checked) .theme-toggle {
   background: rgba(241, 245, 249, 0.1);
   border: 1px solid rgba(241, 245, 249, 0.2);
 }
 
-[data-theme="dark"] .theme-toggle:hover {
+body:has(#theme-switch:checked) .theme-toggle:hover {
   background: rgba(241, 245, 249, 0.2);
 }
 
-/* Language toggle button */
-.lang-toggle {
-  background: rgba(255, 255, 255, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 12px;
-  padding: 8px 12px;
-  cursor: pointer;
-  font-size: 14px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  backdrop-filter: blur(10px);
-  color: white;
-  text-decoration: none;
+/* Language toggle button - FIXED (Removed Box) */
+body:has(#theme-switch:checked) .lang-toggle {
+  background: transparent;
+  border: 1px solid transparent; /* Removes the box border */
+  color: var(--muted);
 }
 
-.lang-toggle:hover {
-  background: rgba(255, 255, 255, 0.3);
-  transform: scale(1.05);
-}
-
-.lang-toggle:active {
-  transform: scale(0.95);
-}
-
-[data-theme="dark"] .lang-toggle {
+body:has(#theme-switch:checked) .lang-toggle:hover {
   background: rgba(241, 245, 249, 0.1);
-  border: 1px solid rgba(241, 245, 249, 0.2);
-}
-
-[data-theme="dark"] .lang-toggle:hover {
-  background: rgba(241, 245, 249, 0.2);
+  color: var(--accent);
 }
 
 /* Footer */
-[data-theme="dark"] .footer {
+body:has(#theme-switch:checked) .footer {
   color: var(--muted);
 }
 
 /* Scrollbar styling for dark mode */
-[data-theme="dark"] ::-webkit-scrollbar {
+body:has(#theme-switch:checked) ::-webkit-scrollbar {
   width: 12px;
 }
 
-[data-theme="dark"] ::-webkit-scrollbar-track {
+body:has(#theme-switch:checked) ::-webkit-scrollbar-track {
   background: var(--bg);
 }
 
-[data-theme="dark"] ::-webkit-scrollbar-thumb {
+body:has(#theme-switch:checked) ::-webkit-scrollbar-thumb {
   background: var(--hover);
   border-radius: 6px;
   border: 3px solid var(--bg);
 }
 
-[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+body:has(#theme-switch:checked) ::-webkit-scrollbar-thumb:hover {
   background: var(--accent-2);
 }
 
 /* Selection color */
-[data-theme="dark"] ::selection {
+body:has(#theme-switch:checked) ::selection {
   background: rgba(129, 140, 248, 0.3);
   color: var(--accent);
 }
 
 /* Links */
-[data-theme="dark"] a {
+body:has(#theme-switch:checked) a {
   color: var(--accent-2);
 }
 
-[data-theme="dark"] a:hover {
+body:has(#theme-switch:checked) a:hover {
   color: #a5b4fc;
 }
 
 /* Glass effect for special elements */
-[data-theme="dark"] .intro {
+body:has(#theme-switch:checked) .intro {
   backdrop-filter: blur(10px);
   background: rgba(30, 41, 59, 0.8);
 }
 
 /* Enhance box shadows in dark mode */
-[data-theme="dark"] .tech-card::before {
+body:has(#theme-switch:checked) .tech-card::before {
   background: linear-gradient(90deg, transparent, rgba(129, 140, 248, 0.15), transparent);
 }
 
 /* Certification list */
-[data-theme="dark"] #certifications ul {
+body:has(#theme-switch:checked) #certifications ul {
   color: var(--muted);
 }
 
-[data-theme="dark"] #certifications li::marker {
+body:has(#theme-switch:checked) #certifications li::marker {
   color: var(--accent-2);
 }
 
-/* Smooth transitions for theme switching */
-* {
-  transition: background-color 0.3s ease, 
-              border-color 0.3s ease, 
-              color 0.3s ease,
-              box-shadow 0.3s ease;
-}
-
-/* Preserve animation performance */
-.fade-in-up,
-.tech-card,
-.hobby,
-.btn,
-img {
-  transition: background-color 0.3s ease, 
-              border-color 0.3s ease, 
-              color 0.3s ease,
-              transform 0.3s ease,
-              opacity 0.3s ease,
-              box-shadow 0.3s ease !important;
-}
-
 /* Enhanced glow effects for dark mode */
-[data-theme="dark"] .card:hover {
+body:has(#theme-switch:checked) .card:hover {
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5),
               0 0 0 1px rgba(129, 140, 248, 0.2),
               0 0 20px rgba(129, 140, 248, 0.1);
 }
 
-[data-theme="dark"] .logo:hover {
+body:has(#theme-switch:checked) .logo:hover {
   box-shadow: 0 8px 24px rgba(79, 70, 229, 0.6),
               0 0 40px rgba(129, 140, 248, 0.3);
 }
@@ -394,6 +359,6 @@ img {
   }
 }
 
-[data-theme="dark"] .skill-bar-fill {
+body:has(#theme-switch:checked) .skill-bar-fill {
   animation: fillBar 1.5s ease-out forwards, darkGlow 3s ease-in-out infinite;
 }

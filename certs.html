@@ -5,13 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Certifications - Solomon</title>
   <link rel="stylesheet" href="certs.css">
+  <link rel="stylesheet" href="darkmode.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <input type="checkbox" id="theme-switch" style="display: none;">
+
   <div class="container">
-    <h1>Certifications</h1>
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <h1>Certifications</h1>
+      <label for="theme-switch" class="theme-toggle" aria-label="Toggle dark mode">
+          <span class="theme-icon">🌙</span>
+      </label>
+    </div>
     <p class="muted">A full list of certifications, achievements, and completed courses.</p>
 
     <div class="cert-grid">
@@ -86,13 +94,5 @@
 
     <a href="index.html" class="back">← Back to Portfolio</a>
   </div>
-
-  <script>
-    // Read theme from localStorage and apply it immediately
-    (function() {
-      const theme = localStorage.getItem('theme') || 'light';
-      document.documentElement.setAttribute('data-theme', theme);
-    })();
-  </script>
 </body>
 </html>
