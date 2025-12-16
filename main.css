@@ -31,13 +31,13 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.45;
-  padding: 80px 20px; /* Added side padding for better default mobile view */
+  padding: 80px 20px; 
   display: flex;
   justify-content: center;
 }
 
 html {
-  scroll-padding-top: 140px; /* Increased to account for taller mobile header */
+  scroll-padding-top: 140px; 
 }
 
 .container {
@@ -93,7 +93,7 @@ header {
 }
 
 .socials img {
-  width: 24px; /* Slightly smaller for better fit */
+  width: 24px; 
   margin: 0;
 }
 
@@ -128,7 +128,7 @@ header nav a:hover {
   display: grid;
   grid-template-columns: 1fr 380px;
   gap: 28px;
-  align-items: center; /* Changed from center to align top */
+  align-items: center; /* Centered alignment for profile card */
   margin-bottom: 36px;
   margin-top: 20px;
 }
@@ -190,7 +190,7 @@ a {
 .intro h1 {
   margin: 0 0 8px 0;
   font-weight: 700;
-  font-size: clamp(24px, 5vw, 30px); /* Responsive font size */
+  font-size: clamp(24px, 5vw, 30px); 
 }
 
 .intro p {
@@ -325,9 +325,10 @@ h2 {
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
+/* UPDATED TECH IMAGE SIZING */
 .tech-card img {
-  width: 100%;
-  height: 100%;
+  width: auto;       /* Allow width to adjust naturally */
+  height: 65%;       /* Percentage height prevents "too big" look on desktop */
   object-fit: contain; 
   opacity: 0.5;
   transition: all 0.2s;
@@ -337,14 +338,12 @@ h2 {
   opacity: 1;
 }
 
-#python img, #arduino img, #react img, #git img, #nodejs img {
-  height: 100px;
-}
-
+/* Specific adjustment for HTML/CSS shapes */
 #html img, #css img {
-  height: 120px;
+  height: 75%;
 }
 
+/* EDUCATION SECTION (Default/Desktop) */
 #education {
   display: flex;
   flex-direction: column;
@@ -353,13 +352,13 @@ h2 {
 
 .undergrad, .highschool {
   display: flex;
-  align-items: flex-start; /* Changed from center for better text wrapping */
+  align-items: center;
 }
 
 .univlogo img {
-  width: 60px; /* Reduced slightly */
+  width: 80px; 
   flex-shrink: 0;
-  margin-right: 15px;
+  margin-right: 20px;
 }
 
 #with-highest {
@@ -451,7 +450,7 @@ input, textarea {
   padding: 12px;
   border-radius: 10px;
   border: 1px solid rgba(17, 24, 39, 0.06);
-  font-size: 16px; /* Prevents zooming on iOS */
+  font-size: 16px; 
   width: 100%;
 }
 
@@ -469,13 +468,12 @@ textarea {
 
 /* --- RESPONSIVE MEDIA QUERIES --- */
 
-/* Tablet Adjustment */
 @media (max-width: 900px) {
   .hero {
     grid-template-columns: 1fr;
   }
   .profile {
-    order: -1; /* Puts profile picture above intro text on mobile */
+    order: -1; 
     flex-direction: row;
     justify-content: flex-start;
     text-align: left;
@@ -493,22 +491,21 @@ textarea {
   }
 }
 
-/* Tech Grid Specifics */
 @media (max-width: 600px) {
   .tech-grid {
     grid-template-columns: repeat(3, 1fr); 
   }
   
-  /* HEADER MOBILE TRANSFORMATION */
+  /* FIXED: Header un-fix for mobile */
   header {
-    position: relative; /* Unfix header so it doesn't take up whole screen */
+    position: relative; 
     flex-direction: column;
     height: auto;
     padding: 15px;
   }
   
   nav.header {
-    display: flex; /* Force display flex (override old display:none) */
+    display: flex; 
     flex-wrap: wrap;
     justify-content: center;
     gap: 15px;
@@ -522,11 +519,31 @@ textarea {
   }
   
   body {
-    padding-top: 20px; /* Reduce top padding since header isn't fixed */
+    padding-top: 20px; 
+  }
+
+  /* EDUCATION FIX FOR MOBILE */
+  /* This stacks the logo and text vertically to prevent squashing */
+  .undergrad, .highschool {
+    flex-direction: column;
+    text-align: center;
+    align-items: center; 
+    gap: 10px;
+    padding: 10px 0;
+  }
+
+  .univlogo img {
+    margin-right: 0; 
+    margin-bottom: 5px; 
+    width: 70px; 
+  }
+
+  /* Force remove the top margin on text to fix alignment in stack mode */
+  .undergrad p, .highschool p {
+    margin-top: 0 !important;
   }
 }
 
-/* Small Mobile Adjustment */
 @media (max-width: 450px) {
   body {
     padding: 10px 14px;
