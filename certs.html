@@ -86,5 +86,13 @@
 
     <a href="index.html" class="back">← Back to Portfolio</a>
   </div>
+
+  <script>
+    // Read theme from localStorage and apply it immediately
+    (function() {
+      const theme = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
 </body>
 </html>

@@ -9,8 +9,19 @@
   --max-width: 900px;
 }
 
+/* ========== DARK MODE VARIABLES ========== */
+[data-theme="dark"] {
+  --bg: #0f172a;
+  --card: #1e293b;
+  --accent: #f1f5f9;
+  --accent-2: #818cf8;
+  --muted: #94a3b8;
+  --glass: rgba(148, 163, 184, 0.08);
+}
+
 * {
   box-sizing: border-box;
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
 body {
@@ -33,6 +44,7 @@ h1 {
   font-size: 28px;
   margin: 0 0 14px 0;
   font-weight: 700;
+  color: var(--accent);
 }
 
 .muted {
@@ -61,14 +73,26 @@ h1 {
   /* Link Specifics */
   text-decoration: none;
   color: var(--accent);
-  transition: transform 0.2s ease, border-color 0.2s ease;
-  position: relative; /* Needed for the background image */
-  overflow: hidden;   /* Keeps the image inside the rounded corners */
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
 .card:hover {
   transform: translateY(-4px);
   border-color: var(--accent-2);
+}
+
+/* ========== DARK MODE CARD STYLES ========== */
+[data-theme="dark"] .card {
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .card:hover {
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4),
+              0 0 0 1px rgba(129, 140, 248, 0.1);
+  border-color: rgba(129, 140, 248, 0.2);
 }
 
 /* This creates the background image layer */
@@ -81,14 +105,24 @@ h1 {
   height: 100%;
   background-size: cover;
   background-position: center;
-  opacity: 0.05; /* 7% Opacity - Adjust this to make images clearer or fainter */
-  z-index: 0;    /* Puts it behind the text */
+  opacity: 0.05;
+  z-index: 0;
   transition: opacity 0.2s ease;
 }
 
 /* Increase opacity slightly on hover for effect */
 .card:hover::before {
   opacity: 0.2;
+}
+
+/* ========== DARK MODE BACKGROUND IMAGES ========== */
+[data-theme="dark"] .card::before {
+  opacity: 0.15;
+  filter: brightness(0.8);
+}
+
+[data-theme="dark"] .card:hover::before {
+  opacity: 0.3;
 }
 
 /* Ensure text sits ON TOP of the background image */
@@ -101,6 +135,7 @@ h1 {
   font-weight: 700;
   font-size: 16px;
   line-height: 1.4;
+  color: var(--accent);
 }
 
 .issuer {
@@ -111,7 +146,7 @@ h1 {
 .date {
   font-size: 13px;
   color: var(--muted);
-  margin-top: auto; /* Pushes date to bottom if card height varies */
+  margin-top: auto;
 }
 
 a.back {
@@ -120,11 +155,23 @@ a.back {
   text-decoration: none;
   font-weight: 600;
   color: var(--accent-2);
+  transition: color 0.2s ease;
+}
+
+a.back:hover {
+  color: var(--accent);
+}
+
+/* ========== DARK MODE BACK LINK ========== */
+[data-theme="dark"] a.back {
+  color: var(--accent-2);
+}
+
+[data-theme="dark"] a.back:hover {
+  color: #a5b4fc;
 }
 
 /* --- INDIVIDUAL BACKGROUND IMAGES --- */
-/* I used Unsplash IDs here. You can replace the URLs with local images later. */
-
 #hackathon::before { background-image: url("assets/aifrontiers.png"); }
 #pycon::before { background-image: url("assets/pycon.png"); }
 #arcx::before { background-image: url("assets/arcx.png"); }
